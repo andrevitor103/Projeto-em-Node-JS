@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node JS</title>
+  </head>
+  <body>
+    <header>
+      <div style="text-align: center">
+        <p>App tarefas</p>
+      </div>
+    </header>
+    <div class="tarefas">
+      <div class="tarefasForm">
+        <form action="post" method="post">
+          <input type="text" name="tarefa" required />
+          <input type="submit" value="Adicionar" />
+        </form>
+      </div>
+      <ul>
+        <% for(let i = 0; i < tarefasList.length; i++) { %>
+        <div class="tarefa-single">
+          <li><%= tarefasList[i] %></li>
+          <a href="/delete/<%=i%>">X</a>
+        </div>
+        <% } %>
+      </ul>
+    </div>
+
+    <footer>
+      <p>Make @André Vitor F. Adams - 2021-2021</p>
+    </footer>
+  </body>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      background-color: antiquewhite;
+      width: 100%;
+      height: 100vh;
+    }
+
+    header {
+      background-color: #069;
+      width: 100%;
+      padding: 40px;
+    }
+
+    footer {
+      flex: 1;
+      background-color: #000;
+      padding: 50px 0px;
+      position: absolute;
+      right: 0%;
+      left: 0%;
+      bottom: 0%;
+      color: white;
+      text-align: center;
+    }
+
+    .tarefas {
+      background-color: white;
+      width: 40%;
+      margin-left: 40%;
+      margin-top: 1%;
+      padding: 0.5%;
+      text-align: center;
+    }
+
+    .tarefasForm {
+      background-color: beige;
+      padding: 20px 0px;
+    }
+
+    .tarefasForm > form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .tarefasForm > form > input {
+      width: 50%;
+      margin-bottom: 2%;
+      padding: 2px;
+    }
+
+    .tarefasForm > form > input[type="submit"] {
+      background-color: rgba(255, 0, 0, 0.8);
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      margin-bottom: 2%;
+      color: rgb(2, 2, 2);
+      font-weight: bold;
+      flex: 4;
+    }
+
+    a {
+      flex: 1;
+      text-decoration: none;
+      color: #000;
+      border-radius: 20px;
+      padding: 2px;
+    }
+    .tarefa-single {
+      display: flex;
+      background-color: bisque;
+      flex-direction: row;
+      width: 100%;
+      height: 100%;
+      padding: 1%;
+      border-bottom: 8px solid;
+      border-color: white;
+    }
+  </style>
+</html>
